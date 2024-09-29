@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Dot Product Calculator - AlphaLake Labs</title>
+    
+    <meta name="description" content="Calculate the dot product of two vectors easily with our Dot Product Calculator. Perfect for students and professionals needing quick calculations.">
+    <meta name="keywords" content="dot product calculator, vector calculations, math tools, AlphaLake Labs">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="AlphaLake Labs">
+    <meta name="publisher" content="Alpha Lake">
+    
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+        
+        input {
+            padding: 10px;
+            margin: 5px;
+            font-size: 1.2em;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            width: 200px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 5px;
+            background-color: #ffffff; /* White background */
+            color: #000000; /* Black text */
+            border: 2px solid black;
+            margin: 10px;
+        }
+        
+        button:hover {
+            background-color: #f0f0f0; /* Light gray background on hover */
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 1.5em;
+        }
+
+        /* Styles for the home button */
+        .home-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            text-decoration: none;
+        }
+
+        .home-icon {
+            width: 30px; /* Adjust size as needed */
+            height: 30px; /* Adjust size as needed */
+            fill: white; /* Icon color */
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="home-button">
+        <!-- SVG Home Icon -->
+        <svg class="home-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3l-10 9h3v9h14v-9h3z"/></svg>
+    </a>
+
+    <h1>Dot Product Calculator</h1>
+    <div>
+        <h3>Enter Vector A:</h3>
+        <input type="text" id="vectorA" placeholder="a1, a2, a3" required>
+    </div>
+    <div>
+        <h3>Enter Vector B:</h3>
+        <input type="text" id="vectorB" placeholder="b1, b2, b3" required>
+    </div>
+    <button id="calculate-button">Calculate Dot Product</button>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById("calculate-button").addEventListener("click", function() {
+            const vectorA = document.getElementById("vectorA").value.split(',').map(Number);
+            const vectorB = document.getElementById("vectorB").value.split(',').map(Number);
+
+            if (vectorA.length !== vectorB.length) {
+                document.getElementById("result").innerText = "Vectors must be of the same dimension.";
+                return;
+            }
+
+            const dotProduct = vectorA.reduce((sum, a, i) => sum + a * vectorB[i], 0);
+            document.getElementById("result").innerText = "Dot Product: " + dotProduct;
+        });
+    </script>
+</body>
+</html>

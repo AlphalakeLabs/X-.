@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X & .</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Welcome to X & ., an engaging platform for learning and exploring mathematical concepts through interactive games like Cross Product and Dot Product.">
+    <meta name="keywords" content="mathematics, interactive games, cross product, dot product, education, learning">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="AlphaLake Labs">
+    <meta name="publisher" content="Alpha Lake">
+    
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        /* Your existing styles here... */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+            background-size: 800% 800%;
+            animation: gradientShift 30s ease infinite;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 3em;
+        }
+
+        #game-board {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 5px;
+            width: 90vw;
+            max-width: 360px;
+            aspect-ratio: 1;
+            margin: 0 auto;
+        }
+
+        .cell {
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            border: 2px solid #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4vw;
+            cursor: pointer;
+        }
+
+        .cell:hover {
+            background-color: #e0e0e0;
+        }
+
+        #cross-product-button,
+        #dot-product-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 5px;
+            border-radius: 5px;
+            background-color: #ffffff; /* White background */
+            color: #000000; /* Black text */
+            border: 2px solid black;
+        }
+
+        #cross-product-button:hover,
+        #dot-product-button:hover {
+            background-color: #f0f0f0; /* Light gray background on hover */
+        }
+
+        #reset-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .start-container {
+            text-align: center;
+            margin-top: 20%;
+        }
+
+        .home-icon {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            font-size: 24px;
+            color: black;
+            background: white;
+            border-radius: 50%;
+            padding: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+        }
+
+        .home-icon:hover {
+            color: #007bff;
+        }
+
+        #difficultyButtons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+            transform: translateX(-50px); /* Initially positioned behind the play AI button */
+        }
+
+        /* Animation for difficulty buttons emerging from the right */
+        #difficultyButtons.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Media Queries for Tablets */
+        @media (max-width: 768px) {
+            #game-board {
+                width: 80vw;
+                max-width: 320px;
+            }
+
+            .cell {
+                font-size: 5vw;
+            }
+
+            #reset-button {
+                font-size: 1.4rem;
+            }
+        }
+
+        /* Media Queries for Mobile Phones */
+        @media (max-width: 600px) {
+            #game-board {
+                width: 90vw;
+                max-width: 280px;
+            }
+
+            .cell {
+                font-size: 6vw;
+            }
+
+            #reset-button {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container start-container">
+        <h2>Welcome to</h2>
+        <h1><img src="logo.png" alt="Logo" style="width: 150px; height: auto;"></h1>
+        <button id="cross-product-button">Cross Product</button>
+        <button id="dot-product-button">Dot Product</button>
+    </div>
+    
+    <div id="game-board" class="hidden">
+        <!-- Game cells go here -->
+    </div>
+    <button id="reset-button" class="hidden">Reset Game</button>
+
+    <script>
+        document.getElementById("cross-product-button").addEventListener("click", function() {
+            window.location.href = "CP.html";
+        });
+
+        document.getElementById("dot-product-button").addEventListener("click", function() {
+            window.location.href = "DP.html";
+        });
+    </script>
+</body>
+</html>

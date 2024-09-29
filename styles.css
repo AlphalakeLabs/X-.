@@ -1,0 +1,206 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(45deg, 
+                                rgba(0, 0, 0, 0.8), 
+                                rgba(255, 0, 0, 0.5), 
+                                rgba(255, 165, 0, 0.5), 
+                                rgba(255, 255, 0, 0.5), 
+                                rgba(0, 128, 0, 0.5), 
+                                rgba(0, 0, 255, 0.5), 
+                                rgba(75, 0, 130, 0.5), 
+                                rgba(238, 130, 238, 0.5), 
+                                rgba(0, 0, 0, 0.8));
+    background-size: 800% 800%; /* Expand background size for smooth animation */
+    animation: gradientShift 30s ease infinite; /* Animate background gradient */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Prevents scrollbars */
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Use fractional units for flexibility */
+    grid-template-rows: repeat(3, 1fr); /* Use fractional units for flexibility */
+    gap: 5px;
+    width: 90vw; /* Width adjusts based on viewport width */
+    max-width: 360px; /* Maximum width to prevent it from being too large */
+    aspect-ratio: 1; /* Maintain a square aspect ratio */
+    margin: 0 auto;
+}
+
+.cell {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border: 2px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4vw; /* Responsive font size */
+    cursor: pointer;
+}
+
+.cell:hover {
+    background-color: #e0e0e0;
+}
+
+#reset-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.5rem; /* Responsive font size */
+    cursor: pointer;
+}
+
+/* Media Queries for Tablets */
+@media (max-width: 768px) {
+    #game-board {
+        width: 80vw; /* Adjust width for tablets */
+        max-width: 320px; /* Adjust maximum width for tablets */
+    }
+
+    .cell {
+        font-size: 5vw; /* Adjust font size for tablets */
+    }
+
+    #reset-button {
+        font-size: 1.4rem; /* Adjust button size for tablets */
+    }
+}
+
+/* Media Queries for Mobile Phones */
+@media (max-width: 600px) {
+    #game-board {
+        width: 90vw; /* Adjust width for mobile phones */
+        max-width: 280px; /* Adjust maximum width for mobile phones */
+    }
+
+    .cell {
+        font-size: 6vw; /* Larger font size for mobile phones */
+    }
+
+    #reset-button {
+        font-size: 1.2rem; /* Adjust button size for mobile phones */
+    }
+}
+
+/* Existing CSS */
+#start-game-button,
+#play-ai-button {
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    background-color: #ffffff;
+    color: rgb(36, 36, 36);
+    border: 2;
+    border-radius: 5px;
+    margin: 10px; /* Space between buttons */
+}
+
+#start-game-button:hover,
+#play-ai-button:hover {
+    background-color: #0056b3;
+}
+
+body {
+    transition: opacity 0.5s ease-out;
+}
+
+.fade-out {
+    opacity: 0;
+}
+
+.start-container {
+    text-align: center;
+    margin-top: 20%;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.home-icon {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    color: black;
+    background: white;
+    border-radius: 50%;
+    padding: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+}
+.home-icon:hover {
+    color: #007bff;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.hidden {
+    display: none;
+}
+
+#difficultyButtons {
+    margin-top: 20px;
+}
+
+.difficultyButton {
+    display: block;
+    margin: 10px auto;
+}

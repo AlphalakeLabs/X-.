@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cross Product Calculator</title>
+    <meta name="description" content="Easily calculate the cross product of two vectors with our online Cross Product Calculator by AlphaLake Labs. Perfect for students and professionals alike!">
+    <meta name="keywords" content="cross product calculator, vector calculation, mathematics, AlphaLake Labs, online calculator">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="AlphaLake Labs">
+    <meta name="publisher" content="Alpha Lake">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .vector-input {
+            margin: 10px;
+        }
+
+        input {
+            padding: 10px;
+            margin: 5px;
+            font-size: 1.2em;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            width: 60px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 5px;
+            background-color: #ffffff; /* White background */
+            color: #000000; /* Black text */
+            border: 2px solid black;
+            margin: 10px;
+        }
+        
+        button:hover {
+            background-color: #f0f0f0; /* Light gray background on hover */
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 1.5em;
+            text-shadow: 1px 1px 0 black, -1px -1px 0 black, 
+                         1px -1px 0 black, -1px 1px 0 black; /* Black outline */
+        }
+
+        /* Styles for the home button */
+        .home-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            text-decoration: none;
+        }
+
+        .home-icon {
+            width: 30px; /* Adjust size as needed */
+            height: 30px; /* Adjust size as needed */
+            fill: white; /* Icon color */
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="home-button">
+        <!-- SVG Home Icon -->
+        <svg class="home-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3l-10 9h3v9h14v-9h3z"/></svg>
+    </a>
+
+    <h1>Cross Product Calculator</h1>
+    <div class="vector-input">
+        <h3>Enter Vector A:</h3>
+        <input type="number" id="a1" placeholder="a1" required>
+        <input type="number" id="a2" placeholder="a2" required>
+        <input type="number" id="a3" placeholder="a3" required>
+    </div>
+    <div class="vector-input">
+        <h3>Enter Vector B:</h3>
+        <input type="number" id="b1" placeholder="b1" required>
+        <input type="number" id="b2" placeholder="b2" required>
+        <input type="number" id="b3" placeholder="b3" required>
+    </div>
+    <button id="calculate-button">Calculate Cross Product</button>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById("calculate-button").addEventListener("click", function() {
+            const a1 = parseFloat(document.getElementById("a1").value) || 0;
+            const a2 = parseFloat(document.getElementById("a2").value) || 0;
+            const a3 = parseFloat(document.getElementById("a3").value) || 0;
+            const b1 = parseFloat(document.getElementById("b1").value) || 0;
+            const b2 = parseFloat(document.getElementById("b2").value) || 0;
+            const b3 = parseFloat(document.getElementById("b3").value) || 0;
+
+            // Calculate cross product
+            const crossProduct = {
+                x: a2 * b3 - a3 * b2,
+                y: a3 * b1 - a1 * b3,
+                z: a1 * b2 - a2 * b1
+            };
+
+            document.getElementById("result").innerText = `Cross Product: (${crossProduct.x}, ${crossProduct.y}, ${crossProduct.z})`;
+        });
+    </script>
+</body>
+</html>
